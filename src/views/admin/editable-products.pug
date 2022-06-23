@@ -1,0 +1,29 @@
+extends ../layouts/base.pug
+
+block head 
+    title Editable Products
+
+block body
+    if products.length 
+        table
+            tr
+                th Product 
+                th Price 
+                th Description
+                th Available
+                th 
+                th 
+            each product in products 
+                tr 
+                    td #{product.title}
+                    td $#{product.price}
+                    td #{product.description}
+                    td #{product.available}
+                    td 
+                        a.btn_anchor.btn_edit(href=`/admin/edit-product/${product.id}`) Edit
+                    td 
+                        form(action=`/admin/delete-product`, method="post")
+                            input(type="hidden", name="id", value=`${product.id}`)
+                            input.btn_anchor.btn_delete(type="submit", value="Delete Product")
+    else 
+        h1 0 Product

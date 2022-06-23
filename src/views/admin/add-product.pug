@@ -1,0 +1,26 @@
+extends ../layouts/base.pug
+
+block head 
+    link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/forms.css")
+    title Add Product
+
+block body 
+    main
+        form.product-form(method="post")
+            div.form-control
+                input#image(type="hidden", name="image", value="https://picsum.photos/200" required)
+
+                label(for="title") Title
+                input#title(type="text", name="title", required)
+                
+                label(for="price") Price
+                input#price(type="text", name="price", pattern="^\\d{1,}(\\.\\d{1,2})?$", required)
+                
+                label(for="description") Description
+                input#description(type="text", name="description", required)
+
+                label(for="available") Quantity Available
+                input#available(type="number", name="available", required)
+
+            button(type="submit") Add Product

@@ -1,0 +1,20 @@
+extends ../layouts/base.pug
+
+block body
+    main
+        if products.length
+            div.grid
+                each product in products
+                    article 
+                        header
+                            h1 #{product.title}
+                        div
+                            img(src=`${product.image}`, alt=product, srcset="")
+                        div
+                            h2 $#{product.price}
+                            p #{product.description}
+                        a(href=`/shop/product/${product.id}`) Learn More
+                        hr
+        else 
+            h1 There is no products
+    script(src="/js/script.js") 

@@ -10,14 +10,13 @@ block body
                 th Product 
                 th Price
                 th Action
-            each product in cart 
+            each cart_item in cart 
                 tr 
-                    td #{product.product.title}
-                    td $#{product.product.price}
+                    td #{cart_item.product.title}
+                    td $#{cart_item.product.price}
                     td 
-                        form(action="/shop/cart", method="post") 
-                            input(type="hidden", name="user_id", value=`${product.userId}`)
-                            input(type="hidden", name="product_id", value=`${product.productId}`)
+                        form(method="post") 
+                            input(type="hidden", name="cart_id", value=`${cart_item.id}`)
                             input(type="submit", value="Remove")
         h2 Cart Total: $#{total}
         form(action="/shop/new-order", method="post")

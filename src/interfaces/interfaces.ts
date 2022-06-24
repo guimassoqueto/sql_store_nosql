@@ -14,3 +14,11 @@ export interface IUser {
     Product: IProduct[];
     email: string;
 }
+
+export interface ICart {
+    id: string;
+    product: IProduct;
+    productId: string;
+    user: IUser;
+    userId: string;
+}

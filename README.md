@@ -1,10 +1,36 @@
 # sql_store_nosql
 
-1- Install Docker and run:
-`sudo docker run -d --network 127.0.0.1 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=sa -e MONGO_INITDB_ROOT_PASSWORD=admin mongo`
+Pure NodeJS web application. Technologies: NodeJS, prisma.io, MongoDB (Mongo Atlas), pug (templating engine), typescript, ExpressJS.
 
-2 - Check the available networks
-`sudo docker network ls`
+## How to run
 
-3- Test MongoDB connection:
-`docker exec -it mongodb mongosh`
+1 - Clone the repo:
+`git clone https://github.com/guimassoqueto/store_nosql.git`
+
+2 - Install modules:
+`npm install`
+
+3 - Install typescript globally (optionl):
+`npm install -g typescript`
+
+4 - Tranpile to Javascript (if you have installed typescript globally):
+`tsc build`
+
+5 - Create an Mongo Atlas account and create a free database:  
+[Click here to create an account](https://www.mongodb.com/atlas/database)
+
+6 - Insert the database connection string in .env.example in the root, and remove the part '.example' of the file's name
+
+7 - Generate the schemas:
+`npx prisma generate`
+
+8 - Run typescript in watch mode:
+`npm run tsc`
+
+9 - Move the static files:
+`npm run cpfiles`
+
+10 - Run nodemon:
+`npm run nodemon`
+
+11 - Open http://localhost:3000 to view the project

@@ -72,17 +72,21 @@ export class Product {
 
     static async deleteProduct(product_id: string): Promise<Product | unknown> {
         try {
-            await prisma.$connect();
-            const removed_product = await prisma.product.delete({
+            await prisma.$connect()
+            const cart = await prisma.cart.deleteMany({
+                where: {
+                    productId: product_id
+                }
+            })
+    
+            const users = await prisma.product.deleteMany({
                 where: {
                     id: product_id
                 }
-            })
-
-            return removed_product
-        }
-        catch(error) {
-            return error;
+            });
+            return [cart, users]
+        } catch (error) {
+            return error
         }
     }
 }

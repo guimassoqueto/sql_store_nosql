@@ -6,7 +6,6 @@ export function postRemoveFromCart(req: Request, res: Response) {
 
     Cart.removeProdFromCart(cart_id)
         .then(removed_item => {
-            console.log(removed_item);
             res.redirect('/shop/cart');
         })
         .catch(error => {

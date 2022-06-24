@@ -22,3 +22,11 @@ export interface ICart {
     user: IUser;
     userId: string;
 }
+
+export interface IOrder {
+    id: string;
+    cart: ICart;
+    user: IUser;
+    cartId: string;
+    userId: string;
+}

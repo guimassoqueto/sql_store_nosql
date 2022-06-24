@@ -23,7 +23,7 @@ export function postAddProduct(req: Request, res: Response) {
             res.redirect('/admin/editable-products');
         })
         .catch(error => {
-            console.log(error);
+            console.error(error);
             res.redirect('/404');
         });
 }

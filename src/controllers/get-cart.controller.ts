@@ -12,7 +12,6 @@ export function getCart(req: Request, res: Response) {
             const items_in_cart = <ICartItems[]>_cart_items;
             
             const cart_total: number = items_in_cart.reduce((prev, curr) => prev + (curr.product.price || 0), 0);
-            console.log(items_in_cart)
             res.render('shop/cart', { cart: items_in_cart, total: cart_total });
         })
         .catch(_ => res.redirect('/404'))

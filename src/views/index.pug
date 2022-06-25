@@ -3,5 +3,16 @@ extends layouts/base.pug
 block head 
     title Home Page
 
+block navbar 
+    if isLoggedIn 
+        li
+            a(href="/admin/editable-products") admEditableProducts
+        li
+            a(href="/shop/all-products") shopAllProducs
+    else 
+        li
+            a(href="/user/login") Login             
+
 block body 
-    h1 Home
+    main 
+        h1 Home

@@ -1,0 +1,16 @@
+extends ../layouts/base.pug
+
+block head 
+    title Login Page
+
+block body 
+    h1 Login
+
+    form(method="post")
+        label(for="input-email") Email 
+        input#input-email(type="email", name="email")
+
+        label(for="input-password") Password 
+        input#input-password(type="password", name="password")
+
+        input(type="submit", value="Login")

@@ -1,13 +1,12 @@
 import express, { Express, NextFunction, Request, Response } from "express";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 // utils
 import { viewsLocation } from "./utils/viewsLocation.util";
 // Node modules
 import { join } from "path";
 // custom middlewares
 import { setDefaultUser } from "./middlewares/setDefaultUser.middleware";
-import { setLoggedInFalse } from "./middlewares/setLoggedInFalse.middleware";
-
 // routes
 import { adminRoute } from "./routes/admin.route";
 import { shopRoute } from "./routes/shop.route";
@@ -17,11 +16,15 @@ import { indexRoute } from "./routes/index.route";
 const PORT = 3000;
 const app: Express = express();
 
+
 // http://expressjs.com/en/api.html#app.set
 app.set('view engine', 'pug');
 
 // set the folder location for the views
 app.set('views', viewsLocation);
+
+// cookie-parser
+app.use(cookieParser());
 
 // static files
 app.use(express.static(join(__dirname, 'static')));
@@ -34,7 +37,6 @@ app.use(bodyParser.json());
 
 // middlewares
 app.use(setDefaultUser);
-app.use(setLoggedInFalse);
 
 // routes
 app.use('/admin', adminRoute);

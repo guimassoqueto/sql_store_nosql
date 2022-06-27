@@ -4,11 +4,11 @@ block head
     title Home Page
 
 block navbar 
-    if isLoggedIn 
+    if isLoggedIn
+        li
+            a(href="/admin/add-product") admAddProduct
         li
             a(href="/admin/editable-products") admEditableProducts
-        li
-            a(href="/shop/all-products") shopAllProducs
         li
             a(href="/user/logout") 
                 form(action="/user/logout", method="post")

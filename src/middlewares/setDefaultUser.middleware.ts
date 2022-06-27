@@ -16,6 +16,6 @@ export async function setDefaultUser(req: Request, res: Response, next: NextFunc
             id: true
         }
     })
-    req.currentUserId = defaulUserId.id;
+    req.session.currentUserId! = defaulUserId.id;
     next();
 }

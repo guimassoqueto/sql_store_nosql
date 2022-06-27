@@ -8,7 +8,7 @@ export function getNewOrder(_: Request, res: Response) {
 
 
 export function postNewOrder(req: Request, res: Response) {
-    Order.createOrder(req.currentUserId)
+    Order.createOrder(req.session.currentUserId!)
         .then(order => res.redirect('/shop/new-order'))
         .catch(error => {
             console.error(error);

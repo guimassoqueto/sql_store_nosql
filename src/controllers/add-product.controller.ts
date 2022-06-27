@@ -18,7 +18,7 @@ export function postAddProduct(req: Request, res: Response) {
         available: +available
     }
 
-    Product.createProduct(new_product, req.currentUserId)
+    Product.createProduct(new_product, req.session.currentUserId!)
         .then(added_product => {
             res.redirect('/admin/editable-products');
         })

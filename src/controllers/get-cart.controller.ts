@@ -7,7 +7,7 @@ interface ICartItems {
 }
 
 export function getCart(req: Request, res: Response) {
-    Cart.getCart(req.currentUserId)
+    Cart.getCart(req.session.currentUserId!)
         .then(_cart_items => {
             const items_in_cart = <ICartItems[]>_cart_items;
             

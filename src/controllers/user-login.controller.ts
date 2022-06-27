@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import moment from "moment";
+
 
 export function getUserLogin(req: Request, res: Response) {
     res.render('user/login');
@@ -7,6 +7,7 @@ export function getUserLogin(req: Request, res: Response) {
 
 export function postUserLogin(req: Request, res: Response) {
     const { password, email } = req.body;
-    res.cookie('isLoggedIn', 'true', { maxAge: 10 * 1000, httpOnly: true });
+    //res.cookie('isLoggedIn', 'true', { maxAge: 1000 * 1000, httpOnly: true });
+    req.session.isLoggedIn = true;
     res.redirect('/');
 }

@@ -5,3 +5,4 @@
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
 DATABASE_URL="mongodb+srv://USER:PASSWORD@clusterudemy.vinfdzq.mongodb.net/?retryWrites=true&w=majority"
+DATABASE_NAME="DatabaseName"

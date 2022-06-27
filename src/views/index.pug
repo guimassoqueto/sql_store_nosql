@@ -1,6 +1,6 @@
 extends layouts/base.pug
 
-block head 
+block head
     title Home Page
 
 block navbar 
@@ -9,6 +9,10 @@ block navbar
             a(href="/admin/editable-products") admEditableProducts
         li
             a(href="/shop/all-products") shopAllProducs
+        li
+            a(href="/user/logout") 
+                form(action="/user/logout", method="post")
+                    input.logout-btn(type="submit", value="Logout")
     else 
         li
             a(href="/user/login") Login             

@@ -4,7 +4,12 @@ declare global{
     namespace Express {
         interface Request {
             currentUserId: string;
-            isLoggedIn: boolean;
         }
     }
 }
+
+declare module 'express-session' {
+    interface SessionData {
+      isLoggedIn: boolean;
+    }
+  }

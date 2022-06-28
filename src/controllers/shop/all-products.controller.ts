@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Product } from "../models/product.model";
+import { Product } from "../../models/product.model";
 
 export function getAllProducts(req: Request, res: Response) {
     Product.getAllProducts()

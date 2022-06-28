@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Cart } from "../models/cart.model";
+import { Cart } from "../../models/cart.model";
 
 export function postRemoveFromCart(req: Request, res: Response) {
     const { cart_id } = req.body;

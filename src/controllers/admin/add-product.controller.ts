@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
-import { IProduct } from "../interfaces/interfaces";
-import { Product } from "../models/product.model";
+import { IProduct } from "../../interfaces/interfaces";
+import { Product } from "../../models/product.model";
 
 
-export function getAddProduct(_: Request, res: Response) {
-    res.render('admin/add-product');
+export function getAddProduct(req: Request, res: Response) {
+    if (req.session.isLoggedIn) return res.render('admin/add-product');
+    return res.redirect('/user/login');
 }
 
 

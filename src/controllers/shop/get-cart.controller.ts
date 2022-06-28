@@ -1,6 +1,6 @@
-import { Cart } from "../models/cart.model";
+import { Cart } from "../../models/cart.model";
 import { Request, Response } from "express";
-import { IProduct } from "../interfaces/interfaces";
+import { IProduct } from "../../interfaces/interfaces";
 
 interface ICartItems {
     product: IProduct

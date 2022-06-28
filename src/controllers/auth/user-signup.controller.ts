@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
-import { IUser } from "../interfaces/interfaces";
-import { User } from "../models/user.model";
+import { IUser } from "../../interfaces/interfaces";
+import { User } from "../../models/user.model";
 import { hash } from "bcrypt";
-import { Order } from "../models/order.model";
 
 interface IUserSignUp {
     user_name: string

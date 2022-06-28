@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Order } from "../models/order.model";
+import { Order } from "../../models/order.model";
 
 
 export function getNewOrder(_: Request, res: Response) {

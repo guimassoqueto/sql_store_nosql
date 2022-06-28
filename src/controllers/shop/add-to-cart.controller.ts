@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Cart } from "../models/cart.model";
+import { Cart } from "../../models/cart.model";
 
 export function postAddToCart(req: Request, res: Response) {
     const { product_id } = req.body;

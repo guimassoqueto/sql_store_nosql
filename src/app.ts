@@ -10,7 +10,7 @@ import { join } from "path";
 // routes
 import { adminRoute } from "./routes/admin.route";
 import { shopRoute } from "./routes/shop.route";
-import { userRoute } from "./routes/user.route";
+import { authRoute } from "./routes/auth.route";
 import { indexRoute } from "./routes/index.route";
 
 const PORT = 3000;
@@ -33,9 +33,9 @@ app.use(session({
       dbName: process.env.DATABASE_NAME,
       stringify: false,
     }),
-    cookie: {
+    /*cookie: {
       maxAge: 100_000
-    }
+    }*/
   }));
 
 // static files
@@ -50,7 +50,7 @@ app.use(bodyParser.json());
 // routes
 app.use('/admin', adminRoute);
 app.use('/shop', shopRoute);
-app.use('/user', userRoute);
+app.use('/user', authRoute);
 app.get('/', indexRoute);
 
 app.get('/404', (req: Request, res: Response, next: NextFunction) => {

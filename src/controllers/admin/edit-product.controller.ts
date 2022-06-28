@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
-import { Product } from "../models/product.model";
-import { IProduct } from "../interfaces/interfaces";
+import { Product } from "../../models/product.model";
+import { IProduct } from "../../interfaces/interfaces";
 
 export function getEditProduct(req: Request, res: Response) {
+    if (!req.session.isLoggedIn) return res.redirect('/user/login');
+    
     const { id } = req.params;
 
     Product.getProduct(id)

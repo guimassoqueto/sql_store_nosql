@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getAllProducts } from "../controllers/all-products.controller";
-import { getSingleProduct } from "../controllers/single-product.controller";
-import { getCart } from "../controllers/get-cart.controller";
-import { postAddToCart } from "../controllers/add-to-cart.controller";
-import { postRemoveFromCart } from "../controllers/remove-from-cart.controller";
-import { postNewOrder, getNewOrder } from "../controllers/new-order.controller";
+import { getAllProducts } from "../controllers/shop/all-products.controller";
+import { getSingleProduct } from "../controllers/shop/single-product.controller";
+import { getCart } from "../controllers/shop/get-cart.controller";
+import { postAddToCart } from "../controllers/shop/add-to-cart.controller";
+import { postRemoveFromCart } from "../controllers/shop/remove-from-cart.controller";
+import { postNewOrder, getNewOrder } from "../controllers/shop/new-order.controller";
 
 const shopRoute: Router = Router();
 

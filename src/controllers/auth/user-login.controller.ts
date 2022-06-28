@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { ILogin, IUser } from "../interfaces/interfaces";
-import { User } from "../models/user.model";
+import { ILogin, IUser } from "../../interfaces/interfaces";
+import { User } from "../../models/user.model";
 import { compareSync } from "bcrypt";
 
 export function getUserLogin(req: Request, res: Response) {

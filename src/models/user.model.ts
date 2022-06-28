@@ -5,15 +5,15 @@ export class User {
     static async createUser(new_user_data: IUser) {
         try {
             await prisma.$connect();
-
-            const user_exists = await prisma.user.findUnique({
+            
+            const email_exists = await prisma.user.findUnique({
                 where: {
-                    email: new_user_data.email.toLowerCase()
+                    email: new_user_data.email
                 }
             })
 
-            if (user_exists) throw Error("User email already exists");
-            
+            if (email_exists) throw new Error("Email already exists");
+
             const created_user = await prisma.user.create({
                 data: {
                     name: new_user_data.name,

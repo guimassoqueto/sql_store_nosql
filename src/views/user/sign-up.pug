@@ -1,0 +1,23 @@
+extends ../layouts/base.pug
+
+block head 
+    title Signup Page
+
+block body 
+    h1 Signup
+
+    form(method="post") 
+        label(for="user-name") Name 
+        input#user-name(type="text", name="user_name", required)
+
+        label(for="user-email") Email 
+        input#user-email(type="email", name="user_email", required)
+
+        label(for="user-password") Password 
+        input#user-password(type="password", name="user_pwd", required)
+
+        label(for="user-confirm-password") Confirm Password 
+        input#user-confirm-password(type="password", name="user_cpwd", required)
+
+        input(type="submit", value="Create User")
+        

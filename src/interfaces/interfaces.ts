@@ -9,10 +9,11 @@ export interface IProduct {
 }
 
 export interface IUser {
-    id: string;
-    name: String;
-    Product: IProduct[];
+    id?: string;
+    name: string;
+    Product?: IProduct[];
     email: string;
+    password: string;
 }
 
 export interface ICart {
@@ -29,4 +30,9 @@ export interface IOrder {
     user: IUser;
     cartId: string;
     userId: string;
+}
+
+export interface ILogin {
+    email: string;
+    password: string;
 }

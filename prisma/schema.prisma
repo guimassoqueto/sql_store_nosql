@@ -15,6 +15,7 @@ model User {
   name             String
   created_products Product[]
   email            String    @unique
+  password         String
   cart             Cart[]
   Order            Order[]
 }

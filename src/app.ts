@@ -7,8 +7,6 @@ import 'dotenv/config';
 import { viewsLocation } from "./utils/viewsLocation.util";
 // Node modules
 import { join } from "path";
-// custom middlewares
-import { setDefaultUser } from "./middlewares/setDefaultUser.middleware";
 // routes
 import { adminRoute } from "./routes/admin.route";
 import { shopRoute } from "./routes/shop.route";
@@ -34,10 +32,10 @@ app.use(session({
       mongoUrl: process.env.DATABASE_URL,
       dbName: process.env.DATABASE_NAME,
       stringify: false,
-    }),/*
+    }),
     cookie: {
-      maxAge: 10000
-    }*/
+      maxAge: 100_000
+    }
   }));
 
 // static files
@@ -48,9 +46,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
-
-// middlewares
-app.use(setDefaultUser);
 
 // routes
 app.use('/admin', adminRoute);

@@ -4,7 +4,6 @@ import { Product } from "../../models/product.model";
 
 
 export function getAddProduct(req: Request, res: Response) {
-    if (req.session.isLoggedIn) return res.render('admin/add-product');
     return res.redirect('/user/login');
 }
 

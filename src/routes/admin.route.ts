@@ -3,17 +3,18 @@ import { getEditableProducts } from "../controllers/admin/editable-products.cont
 import { getAddProduct, postAddProduct } from "../controllers/admin/add-product.controller";
 import { getEditProduct, postEditProduct } from "../controllers/admin/edit-product.controller";
 import { postDeleteProduct } from "../controllers/admin/delete-product.controller";
+import { onlyAuthAccess } from "../middlewares/setDefaultUser.middleware";
 
 const adminRoute = Router();
 
-adminRoute.get('/editable-products', getEditableProducts);
+adminRoute.get('/editable-products', onlyAuthAccess, getEditableProducts);
 
-adminRoute.get('/add-product', getAddProduct);
-adminRoute.post('/add-product', postAddProduct);
+adminRoute.get('/add-product', onlyAuthAccess, getAddProduct);
+adminRoute.post('/add-product', onlyAuthAccess, postAddProduct);
 
-adminRoute.get('/edit-product/:id', getEditProduct);
-adminRoute.post('/edit-product/:id', postEditProduct);
+adminRoute.get('/edit-product/:id', onlyAuthAccess, getEditProduct);
+adminRoute.post('/edit-product/:id', onlyAuthAccess, postEditProduct);
 
-adminRoute.post('/delete-product', postDeleteProduct);
+adminRoute.post('/delete-product', onlyAuthAccess, postDeleteProduct);
 
 export { adminRoute };

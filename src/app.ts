@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import MongoStore from 'connect-mongo';
 import 'dotenv/config';
+
 // utils
 import { viewsLocation } from "./utils/viewsLocation.util";
 // Node modules
@@ -15,7 +16,6 @@ import { indexRoute } from "./routes/index.route";
 
 const PORT = 3000;
 const app: Express = express();
-
 
 // http://expressjs.com/en/api.html#app.set
 app.set('view engine', 'pug');

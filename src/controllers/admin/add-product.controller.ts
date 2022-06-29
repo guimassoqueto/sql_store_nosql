@@ -4,7 +4,7 @@ import { Product } from "../../models/product.model";
 
 
 export function getAddProduct(req: Request, res: Response) {
-    return res.redirect('/user/login');
+    return res.render('admin/add-product', { csrf: req.csrfToken() });
 }
 
 

@@ -5,7 +5,7 @@ import { getCart } from "../controllers/shop/get-cart.controller";
 import { postAddToCart } from "../controllers/shop/add-to-cart.controller";
 import { postRemoveFromCart } from "../controllers/shop/remove-from-cart.controller";
 import { postNewOrder, getNewOrder } from "../controllers/shop/new-order.controller";
-import { onlyAuthAccess } from "../middlewares/setDefaultUser.middleware";
+import { onlyAuthAccess } from "../middlewares/onlyAuthAccess.middleware";
 
 const shopRoute: Router = Router();
 

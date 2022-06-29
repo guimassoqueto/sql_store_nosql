@@ -9,6 +9,7 @@ block body
     main
         form.product-form(method="post")
             div.form-control
+                input(type="hidden", name="_csrf", value=`${csrf}`)
                 input#image(type="hidden", name="image", value="https://picsum.photos/200" required)
 
                 label(for="title") Title

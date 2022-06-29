@@ -2,7 +2,7 @@ import { Router } from "express";
 import { getUserLogin, postUserLogin } from "../controllers/auth/user-login.controller";
 import { postUserLogout } from "../controllers/auth/user-logout.controller";
 import { getUserSignUp, postUserSignUp } from "../controllers/auth/user-signup.controller";
-import { onlyAuthAccess } from "../middlewares/setDefaultUser.middleware";
+import { onlyAuthAccess } from "../middlewares/onlyAuthAccess.middleware";
 
 const authRoute: Router = Router();
 

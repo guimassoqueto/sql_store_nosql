@@ -3,8 +3,9 @@ import { ILogin, IUser } from "../../interfaces/interfaces";
 import { User } from "../../models/user.model";
 import { compareSync } from "bcrypt";
 
+
 export function getUserLogin(req: Request, res: Response) {
-    res.render('user/login');
+    res.render('user/login', { error: req.flash('error')});
 }
 
 export function postUserLogin(req: Request, res: Response) {
@@ -21,11 +22,13 @@ export function postUserLogin(req: Request, res: Response) {
                     req.session.currentUserId = user.id;
                     req.session.isLoggedIn = true;
                     return res.redirect('/');
-                } else return res.redirect('/user/login');
+                } else { 
+                    req.flash('error', 'Invalid password');
+                    return res.redirect('/user/login');
+                }
             }
-
-            console.log('user dont exist');
-            return res.redirect('/404');
+            req.flash('error', 'User not found!');
+            return res.redirect('/user/login');
         })
         .catch(error => res.redirect('/user/login'));
 }

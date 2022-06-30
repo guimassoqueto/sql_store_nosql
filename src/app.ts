@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import MongoStore from 'connect-mongo';
 import 'dotenv/config';
+import flash from "connect-flash"
 
 // utils
 import { viewsLocation } from "./utils/viewsLocation.util";
@@ -36,7 +37,10 @@ app.use(session({
     /*cookie: {
       maxAge: 100_000
     }*/
-  }));
+}));
+
+// connect-flash
+app.use(flash());
 
 // static files
 app.use(express.static(join(__dirname, 'static')));

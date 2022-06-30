@@ -5,7 +5,9 @@ block head
 
 block body 
     h1 Login
-
+    if error
+        span #{error}
+        
     form(method="post")
         label(for="input-email") Email 
         input#input-email(type="email", name="email")

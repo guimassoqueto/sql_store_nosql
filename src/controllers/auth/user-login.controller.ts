@@ -13,7 +13,7 @@ export function postUserLogin(req: Request, res: Response) {
 
     const user_input: ILogin = { password, email };
     
-    User.loginUser(user_input)
+    User.findUserByEmail(user_input)
         .then(usr => {
             if (usr) {
                 const user = <IUser>usr

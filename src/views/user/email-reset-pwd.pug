@@ -1,0 +1,16 @@
+extends ../layouts/base.pug
+
+block head 
+    title Reset Pass
+
+block body 
+    h1 Reset
+
+    if error
+        span #{error}  
+          
+    form(method="post")
+        label(for="user-email") Your Email
+        input#user-email(type="email", name="email")
+
+        input(type="submit", value="Send Email")

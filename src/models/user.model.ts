@@ -28,7 +28,7 @@ export class User {
         }
     }
 
-    static async loginUser(loginData: ILogin) {
+    static async findUserByEmail(loginData: ILogin) {
         try {
             await prisma.$connect();
             const user = await prisma.user.findUnique({

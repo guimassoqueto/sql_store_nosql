@@ -6,3 +6,5 @@
 
 DATABASE_URL="mongodb+srv://USER:PASSWORD@clusterudemy.vinfdzq.mongodb.net/?retryWrites=true&w=majority"
 DATABASE_NAME="DatabaseName"
+SENDGRID_API=""
+SENDGRID_SENDER=""

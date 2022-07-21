@@ -1,8 +1,8 @@
 import { EmailSender } from "./models/email.model";
 
 EmailSender.sendEmail(
-    'karina_0794@hotmail.com',
-    'Olá Karina Rolim',
+    'gmassoqueto@stone.com.br',
+    'Olá Guilherme Massoqueto',
     '<h1>Jesus te ama e eu tb!</h1>'
 )
     .then(res => {

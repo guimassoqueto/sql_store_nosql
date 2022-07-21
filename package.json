@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc --build",
     "test": "node dist/test.js",
     "cpfiles": "concurrently \"copyfiles -u 1 src/views/*/** dist/\" \"copyfiles -u 1 src/views/* dist/\" \"copyfiles -u 1 src/static/css/* dist/\"",
     "nodemon": "nodemon dist/app.js",
@@ -28,10 +29,11 @@
     "@types/node": "^18.0.0",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
+    "prisma": "^4.1.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@prisma/client": "^3.15.2",
+    "@prisma/client": "^4.1.0",
     "@sendgrid/mail": "^7.7.0",
     "@types/connect-flash": "^0.0.37",
     "bcrypt": "^5.0.1",
@@ -43,7 +45,6 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
-    "prisma": "^3.15.2",
     "pug": "^3.0.2"
   }
 }

@@ -1,4 +1,4 @@
-# sql_store_nosql
+# typescript-store-app-nosql
 
 Pure NodeJS web application. Technologies: NodeJS, prisma.io, MongoDB (Mongo Atlas), pug (templating engine), typescript, ExpressJS.
 
